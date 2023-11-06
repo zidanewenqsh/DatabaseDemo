@@ -11,17 +11,18 @@ services:
 #    environment:
 #      MYSQL_ROOT_PASSWORD: rootpassword
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysqldata:/var/lib/mysql
 #      - ./mysql-data:/var/lib/mysql
     networks:
       hjimi:
-        ipv4_address: 172.16.0.2
+        ipv4_address: 172.16.1.2
 
 
   redis:
     image: redis:latest
+    restart: always
     ports:
       - "6379:6379"
     volumes:
@@ -33,6 +34,7 @@ services:
 
   mongo:
     image: mongo:latest
+    restart: always
     ports:
       - "27017:27017"
     volumes:
@@ -43,6 +45,7 @@ services:
 
   neo4j:
     image: neo4j:latest
+    restart: always
     ports:
       - "7474:7474"
       - "7687:7687"
