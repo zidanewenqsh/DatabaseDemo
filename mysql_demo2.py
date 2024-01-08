@@ -3,7 +3,7 @@
 import pymysql
 
 # Connect to the database
-conn = pymysql.connect(host='localhost', user='ai', password='12345678', database='mydatabase')
+conn = pymysql.connect(host='localhost', port=3307, user='ai', password='12345678', database='mydatabase')
 cursor = conn.cursor()
 
 # Create table
